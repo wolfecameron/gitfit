@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+	<h1>Enter Credentials Below to Login!</h1>
+	<form method='POST' action='/login'>
+		<d1>
+			{{ form.csrf_token }}
+			{{ wtf.form_field(form.user) }}
+			{{ wtf.form_field(form.password) }}
+			<input type='submit' value='Log In'>
+		</d1>
+	</form>
+{% endblock %}
