@@ -6,7 +6,7 @@
 	<form method='POST' action='/login'>
 		<d1>
 			{{ form.csrf_token }}
-			{{ wtf.form_field(form.user) }}
+			{{ wtf.form_field(form.username) }}
 			{{ wtf.form_field(form.password) }}
 			<input type='submit' value='Log In'>
 		</d1>

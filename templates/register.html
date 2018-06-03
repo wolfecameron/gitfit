@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+	<h1>Enter Credentials Below to Register an Account with GitFit!</h1>
+	<form method='POST' action='/register'>
+		<d1>
+			{{ form.csrf_token }}
+			{{ wtf.form_field(form.email) }}
+			{{ wtf.form_field(form.username)}}
+			{{ wtf.form_field(form.password) }}
+			<input type='submit' value='Register Account'>
+		</d1>
+	</form>
+{% endblock %}
