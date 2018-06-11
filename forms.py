@@ -7,7 +7,7 @@ The flask wtforms module was used with gitfit to create
 and handle all forms on the website
 '''
 from flask_wtf import Form
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 
 
@@ -27,6 +27,7 @@ class LoginForm(Form):
 	# both variables below are the fields included in the log in page
 	username = StringField('username', validators=[InputRequired(), Length(min=MIN_USERNAME_LENGTH, max=MAX_USERNAME_LENGTH, )])
 	password = PasswordField('password', validators=[InputRequired(), Length(min=MIN_PASSWORD_LENGTH, max=MAX_PASSWORD_LENGTH, message = bad_password)])
+	remember = BooleanField('Remember Me')
 
 '''
 The below class defines the form used for registering an account with gitfit
